@@ -25,8 +25,9 @@
                             <th scope="row">{{$i++}}</th>
                             <td>{{$user->name}}</td>
                             <td>{{$user->email}}</td>
-                            {{--<td>{{$user->created_at->diffForHumans()}}</td>--}} <!--Use this line if you compact users from Auth-->
-                            <td>{{\Carbon\Carbon::parse($user->created_at)->diffForHumans()}}</td> <!--Use this line if you compact users from DB to pars the date by carbon library-->
+                        {{--<td>{{$user->created_at->diffForHumans()}}</td>--}} <!--Use this line if you compact users from Auth-->
+                            <td>{{\Carbon\Carbon::parse($user->created_at)->diffForHumans()}}</td>
+                            <!--Use this line if you compact users from DB to pars the date by carbon library-->
                         </tr>
                     @endforeach
                     </tbody>

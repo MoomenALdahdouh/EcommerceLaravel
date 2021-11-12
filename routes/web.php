@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemController;
 use App\Models\User;
@@ -29,6 +30,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+/*Route::get('/try', function () {
+    return view('try');
+});*/
+
 Route::get('/category/all',[CategoryController::class,'allCat'])->name('all.categories');
 Route::post('/category/add',[CategoryController::class,'addCat'])->name('add.category');
 Route::get('/category/edit/{id}',[CategoryController::class,'editCat'])->name('edit.category');
@@ -38,6 +43,8 @@ Route::get('/forcedelete/category/{id}',[CategoryController::class,'forcedeleteC
 Route::get('/category/restore/{id}',[CategoryController::class,'restoreCat'])->name('restore.category');
 
 Route::get('/item/all',[ItemController::class,'allItem'])->name('all.items');
+
+Route::get('/brand/all',[BrandController::class,'allBrand'])->name('all.brand');
 
 Route::get('/contact-with-us', function () {
     return view('contact');
